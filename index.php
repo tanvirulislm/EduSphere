@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduSphere | Modern Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Font for logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .course-card:hover .course-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .course-overlay {
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-family: 'Borel', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 bg-opacity-90 backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="book-open" class="h-6 w-6 text-gray-900"></i>
+                        <span class="ml-2 text-xl font-bold logo mt-3">Madrasha</span>
+                    </div>
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="/" class="border-gray-900 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                        <a href="course.php" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Courses</a>
+                        <a href="contact.php" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact Us</a>
+                        <a href="about.php" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
+                    </div>
+                </div>
+
+                <!-- Desktop Auth Buttons -->
+                <div class="hidden md:flex items-center">
+                    <button class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Log in</button>
+                    <button class="ml-4 px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-gray-800">Sign up</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                        <i data-feather="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="/" class="bg-gray-50 border-gray-900 text-gray-900 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
+                <a href="course.php" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Courses</a>
+                <a href="contact.php" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact Us</a>
+                <a href="about.php" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-gray-200">
+                <div class="mt-3 space-y-1 px-2">
+                    <button class="block w-full px-4 py-2 text-left text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Log in</button>
+                    <button class="block w-full px-4 py-2 text-left text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <div class="pt-10 mx-auto max-w-7xl px-4 sm:pt-12 sm:px-6 md:pt-16 lg:pt-20 lg:px-8 xl:pt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block">Learn without</span>
+                            <span class="block text-gray-600">limits</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">Access 5,000+ courses from top instructors. Build skills with our interactive learning platform.</p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 md:py-4 md:text-lg md:px-10"> Explore courses </a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-800 bg-gray-100 hover:bg-gray-200 md:py-4 md:text-lg md:px-10"> <i data-feather="play" class="mr-2 h-4 w-4"></i> Watch demo </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt="" />
+        </div>
+    </div>
+
+    <!-- Callout Section -->
+    <div class="bg-black py-10 pt-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="px-4 pt-10 pb-5 rounded-[34px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0.01)_100%)] shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+                <!-- Badge -->
+                <div class="text-center -mt-14 mb-6">
+                    <p class="inline-block text-center text-white text-sm border border-gray-600 bg-gray-800 py-2 px-4 rounded-full">English Center</p>
+                </div>
+
+                <!-- Heading -->
+                <div class="text-center mb-6">
+                    <h2 class="text-white text-xl font-medium mb-2">Learn English Online & Live Classes</h2>
+                    <p class="text-gray-300 text-sm">We're here to help you learn online</p>
+                </div>
+
+                <!-- Locations -->
+                <div class="flex flex-wrap justify-center gap-2 mb-6">
+                    <button class="bg-white bg-opacity-5 hover:bg-opacity-10 transition text-white text-sm py-2 px-4 rounded-full flex items-center border border-white/20"><i data-feather="map-pin" class="mr-2 h-4 w-4"></i> Uttara</button>
+                    <button class="bg-white bg-opacity-5 hover:bg-opacity-10 transition text-white text-sm py-2 px-4 rounded-full flex items-center border border-white/20"><i data-feather="map-pin" class="mr-2 h-4 w-4"></i> Mohammudpur</button>
+                    <button class="bg-white bg-opacity-5 hover:bg-opacity-10 transition text-white text-sm py-2 px-4 rounded-full flex items-center border border-white/20"><i data-feather="map-pin" class="mr-2 h-4 w-4"></i> Panthapath</button>
+                    <button class="bg-white bg-opacity-5 hover:bg-opacity-10 transition text-white text-sm py-2 px-4 rounded-full flex items-center border border-white/20"><i data-feather="map-pin" class="mr-2 h-4 w-4"></i> Cumilla</button>
+                </div>
+
+                <!-- Course Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <a href="#">
+                        <div class="bg-white bg-opacity-5 hover:bg-opacity-10 transition border border-white/10 rounded-lg p-2 flex items-center">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2850&q=80" alt="Spoken English Junior" class="w-20 h-auto rounded-md mr-4" />
+                            <div>
+                                <h3 class="text-white text-sm font-semibold">Spoken English at Home</h3>
+                                <p class="text-gray-300 text-xs">Spoken English Junior</p>
+                                <p class="text-gray-400 text-xs">For students aged 4-10 years</p>
+                            </div>
+                            <i data-feather="chevron-right" class="ml-auto h-4 w-4 text-white"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="bg-white bg-opacity-5 hover:bg-opacity-10 transition border border-white/10 rounded-lg p-2 flex items-center">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2850&q=80" alt="Spoken English Junior" class="w-20 h-auto rounded-md mr-4" />
+                            <div>
+                                <h3 class="text-white text-sm font-semibold">Spoken English at Home</h3>
+                                <p class="text-gray-300 text-xs">Spoken English Junior</p>
+                                <p class="text-gray-400 text-xs">For students aged 4-10 years</p>
+                            </div>
+                            <i data-feather="chevron-right" class="ml-auto h-4 w-4 text-white"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="bg-white bg-opacity-5 hover:bg-opacity-10 transition border border-white/10 rounded-lg p-2 flex items-center">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2850&q=80" alt="Spoken English Junior" class="w-20 h-auto rounded-md mr-4" />
+                            <div>
+                                <h3 class="text-white text-sm font-semibold">Spoken English at Home</h3>
+                                <p class="text-gray-300 text-xs">Spoken English Junior</p>
+                                <p class="text-gray-400 text-xs">For students aged 4-10 years</p>
+                            </div>
+                            <i data-feather="chevron-right" class="ml-auto h-4 w-4 text-white"></i>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Bottom Links -->
+                <div class="flex justify-center mt-6 gap-4">
+                    <a href="#" class="text-gray-300 text-sm hover:underline hover:text-white transition flex items-center"> See All Courses <i data-feather="arrow-right" class="ml-1 h-4 w-4"></i> </a>
+                    <a href="#" class="text-gray-300 text-sm hover:underline hover:text-white transition flex items-center"> Learn More <i data-feather="arrow-right" class="ml-1 h-4 w-4"></i> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Courses -->
+    <div class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-gray-900 font-semibold tracking-wide uppercase">Expand your knowledge</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Popular Courses</p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Learn in-demand skills with our most popular courses</p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+                    <!-- Course 1 -->
+                    <div class="group relative">
+                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" class="w-full h-full object-center object-cover lg:w-full lg:h-full" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center course-overlay">
+                                <button class="px-4 py-2 bg-white text-gray-900 font-medium rounded-md">View Course</button>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Data Science Fundamentals
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">Dr. Sarah Johnson</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-medium text-gray-900">$89.99</p>
+                                <div class="flex items-center mt-1">
+                                    <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                    <span class="ml-1 text-sm text-gray-600">4.8 (1.2k)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="group relative">
+                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                            <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" class="w-full h-full object-center object-cover lg:w-full lg:h-full" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center course-overlay">
+                                <button class="px-4 py-2 bg-white text-gray-900 font-medium rounded-md">View Course</button>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Web Development Bootcamp
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">Alex Rodriguez</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-medium text-gray-900">$129.99</p>
+                                <div class="flex items-center mt-1">
+                                    <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                    <span class="ml-1 text-sm text-gray-600">4.9 (2.4k)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="group relative">
+                        <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" class="w-full h-full object-center object-cover lg:w-full lg:h-full" />
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center course-overlay">
+                                <button class="px-4 py-2 bg-white text-gray-900 font-medium rounded-md">View Course</button>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-700">
+                                    <a href="#">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Digital Marketing Mastery
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">Jamie Chen</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm font-medium text-gray-900">$79.99</p>
+                                <div class="flex items-center mt-1">
+                                    <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                    <span class="ml-1 text-sm text-gray-600">4.7 (890)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                    View all courses
+                    <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Courses Section -->
+    <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center mb-12">
+                <h2 class="text-base text-gray-900 font-semibold tracking-wide uppercase">Expand your knowledge</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Popular Learning Paths</p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Structured courses to help you master new skills</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Course 1 -->
+                <div class="group flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-200 hover:border-gray-900 transition-colors">
+                    <div class="md:w-1/3">
+                        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="Data Science" />
+                    </div>
+                    <div class="p-6 md:w-2/3">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Data Science Fundamentals</h3>
+                                <p class="text-gray-600 mt-1">Dr. Sarah Johnson</p>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">Beginner</span>
+                        </div>
+
+                        <p class="mt-3 text-gray-700">Master the fundamentals of data analysis, visualization, and machine learning with Python in this comprehensive course.</p>
+
+                        <div class="mt-4 flex items-center">
+                            <div class="flex items-center">
+                                <i data-feather="clock" class="h-4 w-4 text-gray-400"></i>
+                                <span class="ml-2 text-sm text-gray-600">24 hours</span>
+                            </div>
+                            <div class="flex items-center ml-4">
+                                <i data-feather="book" class="h-4 w-4 text-gray-400"></i>
+                                <span class="ml-2 text-sm text-gray-600">12 modules</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div class="flex items-center">
+                                <i data-feather="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 font-medium text-gray-900">4.8</span>
+                                <span class="ml-1 text-gray-500">(1,245 reviews)</span>
+                            </div>
+                            <div class="mt-3 sm:mt-0">
+                                <span class="text-2xl font-bold text-gray-900">$89.99</span>
+                                <button class="ml-4 px-4 py-2 border border-gray-900 text-sm font-medium rounded-md text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="group flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-200 hover:border-gray-900 transition-colors">
+                    <div class="md:w-1/3">
+                        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="Web Development" />
+                    </div>
+                    <div class="p-6 md:w-2/3">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Web Development Bootcamp</h3>
+                                <p class="text-gray-600 mt-1">Alex Rodriguez</p>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">Intermediate</span>
+                        </div>
+
+                        <p class="mt-3 text-gray-700">Go from no-code to full-stack developer with HTML, CSS, JavaScript, React, Node.js, and MongoDB.</p>
+
+                        <div class="mt-4 flex items-center">
+                            <div class="flex items-center">
+                                <i data-feather="clock" class="h-4 w-4 text-gray-400"></i>
+                                <span class="ml-2 text-sm text-gray-600">42 hours</span>
+                            </div>
+                            <div class="flex items-center ml-4">
+                                <i data-feather="book" class="h-4 w-4 text-gray-400"></i>
+                                <span class="ml-2 text-sm text-gray-600">18 modules</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div class="flex items-center">
+                                <i data-feather="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 font-medium text-gray-900">4.9</span>
+                                <span class="ml-1 text-gray-500">(2,412 reviews)</span>
+                            </div>
+                            <div class="mt-3 sm:mt-0">
+                                <span class="text-2xl font-bold text-gray-900">$129.99</span>
+                                <button class="ml-4 px-4 py-2 border border-gray-900 text-sm font-medium rounded-md text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="group flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-200 hover:border-gray-900 transition-colors">
+                    <div class="md:w-1/3">
+                        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="Digital Marketing" />
+                    </div>
+                    <div class="p-6 md:w-2/3">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Digital Marketing Mastery</h3>
+                                <p class="text-gray-600 mt-1">Jamie Chen</p>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">Beginner</span>
+                        </div>
+
+                        <p class="mt-3 text-gray-700">Learn SEO, social media marketing, email marketing, content strategy, and analytics to grow any business.</p>
+
+                        <div class="mt-4 flex items-center">
+                            <div class="flex items-center">
+                                <i data-feather="clock" class="h-4 w-4 text-gray-400"></i>
+                                <span class="ml-2 text-sm text-gray-600">18 hours</span>
+                            </div>
+                            <div class="flex items-center ml-4">
+                                <i data-feather="book" class="h-4 w-4 text-gray-400"></i>
+                                <span class="ml-2 text-sm text-gray-600">9 modules</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div class="flex items-center">
+                                <i data-feather="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 font-medium text-gray-900">4.7</span>
+                                <span class="ml-1 text-gray-500">(897 reviews)</span>
+                            </div>
+                            <div class="mt-3 sm:mt-0">
+                                <span class="text-2xl font-bold text-gray-900">$79.99</span>
+                                <button class="ml-4 px-4 py-2 border border-gray-900 text-sm font-medium rounded-md text-gray-900 hover:bg-gray-900 hover:text-white transition-colors">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                    Show More Courses
+                    <i data-feather="chevron-down" class="ml-2 h-4 w-4"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Most Enrolled Section -->
+    <div class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="inline-block px-3 py-1 text-sm font-semibold text-gray-900 bg-gray-200 rounded-full">Most Enrolled</span>
+                <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Trending This Month</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Join thousands of learners in these top-rated courses</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <div class="relative">
+                        <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="Data Science" />
+                        <div class="absolute top-3 left-3">
+                            <span class="px-2 py-1 text-xs font-bold bg-gray-900 text-white rounded">BESTSELLER</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-500">Data Science</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm font-medium text-gray-900">4.8</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-bold text-gray-900">Data Science Fundamentals</h3>
+                        <p class="mt-1 text-gray-600">Dr. Sarah Johnson</p>
+
+                        <div class="mt-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Enrollment Progress</span>
+                                <span>78% full</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-gray-900 h-2 rounded-full" style="width: 78%"></div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$89.99</span>
+                            <button class="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <div class="relative">
+                        <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="Web Development" />
+                        <div class="absolute top-3 left-3">
+                            <span class="px-2 py-1 text-xs font-bold bg-blue-600 text-white rounded">NEW</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-500">Web Development</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm font-medium text-gray-900">4.9</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-bold text-gray-900">Web Development Bootcamp</h3>
+                        <p class="mt-1 text-gray-600">Alex Rodriguez</p>
+
+                        <div class="mt-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Enrollment Progress</span>
+                                <span>92% full</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-gray-900 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$129.99</span>
+                            <button class="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <div class="relative">
+                        <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="Digital Marketing" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-500">Marketing</span>
+                            <div class="flex items-center">
+                                <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                <span class="ml-1 text-sm font-medium text-gray-900">4.7</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-bold text-gray-900">Digital Marketing Mastery</h3>
+                        <p class="mt-1 text-gray-600">Jamie Chen</p>
+
+                        <div class="mt-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Enrollment Progress</span>
+                                <span>65% full</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-gray-900 h-2 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$79.99</span>
+                            <button class="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-800 transition-colors">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gray-900 hover:bg-gray-800">
+                    Browse All Courses
+                    <i data-feather="chevron-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructors Section -->
+    <div class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-gray-900 font-semibold tracking-wide uppercase">Learn from the best</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Expert Instructors</p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Our instructors are industry leaders with real-world experience</p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <!-- Instructor 1 -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full">
+                            <div class="-mt-6">
+                                <div class="flex justify-center">
+                                    <div class="relative">
+                                        <img class="h-24 w-24 rounded-full object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="" />
+                                        <span class="absolute bottom-0 right-0 bg-gray-900 rounded-full p-1">
+                                            <i data-feather="award" class="h-4 w-4 text-white"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <h3 class="mt-6 text-lg font-medium text-center text-gray-900 tracking-tight">Dr. Sarah Johnson</h3>
+                                <p class="mt-1 text-sm text-center text-gray-500">Data Science</p>
+                                <p class="mt-3 text-base text-gray-500 text-center">Former Lead Data Scientist at TechCorp with 10+ years of experience.</p>
+                                <div class="mt-4 flex justify-center space-x-4">
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="linkedin" class="h-5 w-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="twitter" class="h-5 w-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="github" class="h-5 w-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instructor 2 -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full">
+                            <div class="-mt-6">
+                                <div class="flex justify-center">
+                                    <div class="relative">
+                                        <img class="h-24 w-24 rounded-full object-cover" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="" />
+                                        <span class="absolute bottom-0 right-0 bg-gray-900 rounded-full p-1">
+                                            <i data-feather="award" class="h-4 w-4 text-white"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <h3 class="mt-6 text-lg font-medium text-center text-gray-900 tracking-tight">Alex Rodriguez</h3>
+                                <p class="mt-1 text-sm text-center text-gray-500">Web Development</p>
+                                <p class="mt-3 text-base text-gray-500 text-center">Full-stack developer and creator of popular open-source projects.</p>
+                                <div class="mt-4 flex justify-center space-x-4">
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="linkedin" class="h-5 w-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="twitter" class="h-5 w-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="github" class="h-5 w-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instructor 3 -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full">
+                            <div class="-mt-6">
+                                <div class="flex justify-center">
+                                    <div class="relative">
+                                        <img class="h-24 w-24 rounded-full object-cover" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="" />
+                                        <span class="absolute bottom-0 right-0 bg-gray-900 rounded-full p-1">
+                                            <i data-feather="award" class="h-4 w-4 text-white"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <h3 class="mt-6 text-lg font-medium text-center text-gray-900 tracking-tight">Jamie Chen</h3>
+                                <p class="mt-1 text-sm text-center text-gray-500">Digital Marketing</p>
+                                <p class="mt-3 text-base text-gray-500 text-center">Growth Marketing Director with expertise in scaling startups.</p>
+                                <div class="mt-4 flex justify-center space-x-4">
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="linkedin" class="h-5 w-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="twitter" class="h-5 w-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="github" class="h-5 w-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instructor 4 -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8 h-full">
+                            <div class="-mt-6">
+                                <div class="flex justify-center">
+                                    <div class="relative">
+                                        <img class="h-24 w-24 rounded-full object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="" />
+                                        <span class="absolute bottom-0 right-0 bg-gray-900 rounded-full p-1">
+                                            <i data-feather="award" class="h-4 w-4 text-white"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <h3 class="mt-6 text-lg font-medium text-center text-gray-900 tracking-tight">Michael Brown</h3>
+                                <p class="mt-1 text-sm text-center text-gray-500">UX/UI Design</p>
+                                <p class="mt-3 text-base text-gray-500 text-center">Product Designer at DesignHub with 8 years of industry experience.</p>
+                                <div class="mt-4 flex justify-center space-x-4">
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="linkedin" class="h-5 w-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="twitter" class="h-5 w-5"></i>
+                                    </a>
+                                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                                        <i data-feather="github" class="h-5 w-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-gray-900 font-semibold tracking-wide uppercase">Trusted by learners worldwide</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Our impact in numbers</p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-gray-900 rounded-md shadow-lg">
+                                        <i data-feather="users" class="h-6 w-6 text-white"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">500K+</h3>
+                                <p class="mt-1 text-base text-gray-500">Active learners</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-gray-900 rounded-md shadow-lg">
+                                        <i data-feather="book" class="h-6 w-6 text-white"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">5,000+</h3>
+                                <p class="mt-1 text-base text-gray-500">Courses</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-gray-900 rounded-md shadow-lg">
+                                        <i data-feather="award" class="h-6 w-6 text-white"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">250+</h3>
+                                <p class="mt-1 text-base text-gray-500">Expert instructors</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <div class="flow-root bg-white rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-gray-900 rounded-md shadow-lg">
+                                        <i data-feather="globe" class="h-6 w-6 text-white"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">100+</h3>
+                                <p class="mt-1 text-base text-gray-500">Countries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-gray-900 font-semibold tracking-wide uppercase">Success stories</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">What our students say</p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white border border-gray-100 rounded-lg p-6 testimonial-card">
+                        <div class="flex items-center">
+                            <img class="h-12 w-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="" />
+                            <div class="ml-4">
+                                <h4 class="text-sm font-medium text-gray-900">Emma Wilson</h4>
+                                <p class="text-xs text-gray-500">Data Analyst</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600 italic">"The Data Science course completely transformed my career. Within 3 months of completing the program, I landed a job as a Data Analyst at a Fortune 500 company."</p>
+                        </div>
+                        <div class="mt-4 flex">
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white border border-gray-100 rounded-lg p-6 testimonial-card">
+                        <div class="flex items-center">
+                            <img class="h-12 w-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="" />
+                            <div class="ml-4">
+                                <h4 class="text-sm font-medium text-gray-900">James Rodriguez</h4>
+                                <p class="text-xs text-gray-500">Frontend Developer</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600 italic">"As a complete beginner, I was able to build my first web application after just 2 months of learning. The instructors break down complex concepts into digestible lessons."</p>
+                        </div>
+                        <div class="mt-4 flex">
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white border border-gray-100 rounded-lg p-6 testimonial-card">
+                        <div class="flex items-center">
+                            <img class="h-12 w-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80" alt="" />
+                            <div class="ml-4">
+                                <h4 class="text-sm font-medium text-gray-900">Sophia Chen</h4>
+                                <p class="text-xs text-gray-500">Marketing Manager</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600 italic">"The Digital Marketing course provided practical strategies I could implement immediately. My company's online engagement increased by 300% after applying what I learned."</p>
+                        </div>
+                        <div class="mt-4 flex">
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                            <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                <div>
+                    <h2 class="text-base text-gray-900 font-semibold tracking-wide uppercase">About us</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Our mission</p>
+                    <p class="mt-4 text-lg text-gray-500">EduSphere was founded in 2015 with a simple goal: to make high-quality education accessible to everyone, everywhere.</p>
+                    <div class="mt-6">
+                        <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-900 hover:bg-gray-800">
+                            Learn more about us
+                            <i data-feather="arrow-right" class="ml-2 h-4 w-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 lg:mt-0">
+                    <div class="bg-white border border-gray-100 rounded-lg p-6">
+                        <h3 class="text-lg font-medium text-gray-900">Why choose EduSphere?</h3>
+                        <div class="mt-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i data-feather="check-circle" class="h-6 w-6 text-gray-900"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-base text-gray-700">Industry-recognized certificates upon completion</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i data-feather="check-circle" class="h-6 w-6 text-gray-900"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-base text-gray-700">Learn at your own pace with lifetime access to course materials</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i data-feather="check-circle" class="h-6 w-6 text-gray-900"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-base text-gray-700">Hands-on projects and real-world case studies</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i data-feather="check-circle" class="h-6 w-6 text-gray-900"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-base text-gray-700">Active community of learners and mentors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-gray-900">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+            <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                <span class="block">Ready to dive in?</span>
+                <span class="block text-gray-300">Start your learning journey today.</span>
+            </h2>
+            <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                <div class="inline-flex rounded-md shadow">
+                    <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
+                        Get started
+                        <i data-feather="arrow-right" class="ml-3 h-4 w-4"></i>
+                    </a>
+                </div>
+                <div class="ml-3 inline-flex rounded-md shadow">
+                    <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700">
+                        <i data-feather="play" class="mr-3 h-4 w-4"></i>
+                        Watch demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <!-- Footer navigation -->
+            <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">About</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">Courses</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">Instructors</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">Pricing</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">Blog</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">Contact</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">Privacy</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="#" class="text-base text-gray-500 hover:text-gray-900">Terms</a>
+                </div>
+            </nav>
+            <!-- Social -->
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <i data-feather="facebook" class="h-6 w-6"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <i data-feather="instagram" class="h-6 w-6"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <i data-feather="twitter" class="h-6 w-6"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <i data-feather="github" class="h-6 w-6"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <i data-feather="linkedin" class="h-6 w-6"></i>
+                </a>
+            </div>
+
+            <!-- Payments -->
+            <div class="mt-8 flex justify-center">
+                <img src="Pay-With-logo.webp" alt="Workcation" class="" />
+            </div>
+            <!-- Copyright -->
+            <p class="mt-8 text-center text-base text-gray-400">&copy; 2023 EduSphere, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Feather Icons
+            feather.replace()
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button')
+            const mobileMenu = document.getElementById('mobile-menu')
+
+            mobileMenuButton.addEventListener('click', function() {
+                const isExpanded = mobileMenu.classList.toggle('hidden')
+
+                // Change icon based on menu state
+                const icon = mobileMenuButton.querySelector('i')
+                if (isExpanded) {
+                    icon.setAttribute('data-feather', 'menu')
+                } else {
+                    icon.setAttribute('data-feather', 'x')
+                }
+                feather.replace()
+            })
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden')
+                    mobileMenuButton.querySelector('i').setAttribute('data-feather', 'menu')
+                    feather.replace()
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
