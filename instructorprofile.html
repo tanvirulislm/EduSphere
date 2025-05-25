@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduSphere | Modern Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Font for logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .logo {
+        font-family: 'Borel', sans-serif !important;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 bg-opacity-90 backdrop-blur-sm shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <div class="flex-shrink-0 flex items-center">
+              <i data-feather="book-open" class="h-6 w-6 text-gray-900"></i>
+              <span class="ml-2 text-xl font-bold logo mt-3">Madrasha</span>
+            </div>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:ml-10 md:flex md:space-x-8">
+              <a href="index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+              <a href="course.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Courses</a>
+              <a href="contact.html" class="border-gray-900 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact Us</a>
+              <a href="about.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
+            </div>
+          </div>
+
+          <!-- Desktop Auth Buttons -->
+          <div class="hidden md:flex items-center">
+            <button class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">Log in</button>
+            <button class="ml-4 px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-900 hover:bg-gray-800">Sign up</button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="-mr-2 flex items-center md:hidden">
+            <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+              <i data-feather="menu" class="h-6 w-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+          <a href="index.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
+          <a href="course.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Courses</a>
+          <a href="contact.html" class="bg-gray-50 border-gray-900 text-gray-900 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact Us</a>
+          <a href="about.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About</a>
+        </div>
+        <div class="pt-4 pb-3 border-t border-gray-200">
+          <div class="mt-3 space-y-1 px-2">
+            <button class="block w-full px-4 py-2 text-left text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Log in</button>
+            <button class="block w-full px-4 py-2 text-left text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Sign up</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Instructor Header -->
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- Profile Image -->
+        <div class="w-full md:w-1/3 lg:w-1/4">
+          <div class="bg-white p-4 rounded-lg shadow-md">
+            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sheikh Abdullah Nasir" class="w-full h-auto rounded-lg object-cover" />
+
+            <!-- Quick Stats -->
+            <div class="mt-4 space-y-2">
+              <div class="flex items-center text-gray-600">
+                <i data-feather="book" class="w-5 h-5 mr-2"></i>
+                <span>12 Courses</span>
+              </div>
+              <div class="flex items-center text-gray-600">
+                <i data-feather="users" class="w-5 h-5 mr-2"></i>
+                <span>1,450 Students</span>
+              </div>
+              <div class="flex items-center text-gray-600">
+                <i data-feather="star" class="w-5 h-5 mr-2 text-gray-500"></i>
+                <span>4.9 (128 Reviews)</span>
+              </div>
+            </div>
+
+            <!-- Contact Button -->
+            <button class="mt-6 w-full bg-black hover:bg-gray-900 text-white py-2 px-4 rounded-md flex items-center justify-center">
+              <i data-feather="mail" class="w-5 h-5 mr-2"></i>
+              Contact Instructor
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Profile Content -->
+        <div class="w-full md:w-2/3 lg:w-3/4">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <!-- Name and Title -->
+            <div class="border-b pb-4 mb-4">
+              <h1 class="text-3xl font-bold text-gray-900">Sheikh Abdullah Nasir</h1>
+              <p class="text-gray-600 font-medium">Senior Quran & Hadith Instructor</p>
+            </div>
+
+            <!-- Bio Section -->
+            <div class="mb-6">
+              <h2 class="text-xl font-semibold mb-3 text-gray-800">Biography</h2>
+              <p class="text-gray-600 leading-relaxed">
+                Sheikh Abdullah Nasir is a renowned Islamic scholar with over 15 years of teaching experience. He graduated from the prestigious Al-Azhar University with specialization in Quranic Sciences and Hadith. The Sheikh holds Ijazah in Hafs 'an Asim and Warsh 'an Nafi recitation styles, and
+                is authorized to teach Sahih Bukhari and Muslim.
+              </p>
+            </div>
+
+            <!-- Education Section -->
+            <div class="mb-6">
+              <h2 class="text-xl font-semibold mb-3 text-gray-800">Education & Certifications</h2>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i data-feather="award" class="w-5 h-5 mt-1 mr-2 text-gray-600"></i>
+                  <span class="text-gray-600"> <strong>PhD in Hadith Sciences</strong> - Al-Azhar University, Cairo (2015) </span>
+                </li>
+                <li class="flex items-start">
+                  <i data-feather="award" class="w-5 h-5 mt-1 mr-2 text-gray-600"></i>
+                  <span class="text-gray-600"> <strong>Masters in Quranic Exegesis</strong> - Islamic University of Medina (2010) </span>
+                </li>
+                <li class="flex items-start">
+                  <i data-feather="award" class="w-5 h-5 mt-1 mr-2 text-gray-600"></i>
+                  <span class="text-gray-600"> <strong>Ijazah in Hafs and Warsh recitation</strong> - Certified by Sheikh Mahmoud Khalil Al-Hussary </span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Expertise Section -->
+            <div class="mb-6">
+              <h2 class="text-xl font-semibold mb-3 text-gray-800">Areas of Expertise</h2>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-gray-200 text-gray-900 px-3 py-1 rounded-full text-sm">Quran Recitation</span>
+                <span class="bg-gray-200 text-gray-900 px-3 py-1 rounded-full text-sm">Tajweed Rules</span>
+                <span class="bg-gray-200 text-gray-900 px-3 py-1 rounded-full text-sm">Hadith Sciences</span>
+                <span class="bg-gray-200 text-gray-900 px-3 py-1 rounded-full text-sm">Fiqh (Hanbali)</span>
+                <span class="bg-gray-200 text-gray-900 px-3 py-1 rounded-full text-sm">Seerah</span>
+                <span class="bg-gray-200 text-gray-900 px-3 py-1 rounded-full text-sm">Arabic Grammar</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Courses Section -->
+          <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Courses by Sheikh Abdullah</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Course 1 -->
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Quran Tajweed Course" class="w-full h-40 object-cover" />
+                <div class="p-4">
+                  <h3 class="font-bold text-lg mb-2">Mastering Quran Tajweed</h3>
+                  <p class="text-gray-600 text-sm mb-3">Learn proper pronunciation and articulation of Quranic letters with practical exercises.</p>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 font-medium">12 Weeks</span>
+                    <span class="text-gray-500 flex items-center"> <i data-feather="star" class="w-4 h-4 mr-1"></i> 4.9 </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Course 2 -->
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1568219656418-15c329312bf1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Hadith Studies" class="w-full h-40 object-cover" />
+                <div class="p-4">
+                  <h3 class="font-bold text-lg mb-2">Sahih Bukhari Explained</h3>
+                  <p class="text-gray-600 text-sm mb-3">In-depth study of selected hadiths from Sahih Bukhari with practical applications.</p>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 font-medium">16 Weeks</span>
+                    <span class="text-gray-500 flex items-center"> <i data-feather="star" class="w-4 h-4 mr-1"></i> 5.0 </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Course 3 -->
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Arabic Course" class="w-full h-40 object-cover" />
+                <div class="p-4">
+                  <h3 class="font-bold text-lg mb-2">Arabic for Quran</h3>
+                  <p class="text-gray-600 text-sm mb-3">Essential Arabic grammar and vocabulary to understand the Quran directly.</p>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600 font-medium">10 Weeks</span>
+                    <span class="text-gray-500 flex items-center"> <i data-feather="star" class="w-4 h-4 mr-1"></i> 4.8 </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+      <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+        <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+          <div class="px-5 py-2">
+            <a href="#" class="text-base text-gray-500 hover:text-gray-900">About</a>
+          </div>
+          <div class="px-5 py-2">
+            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Courses</a>
+          </div>
+          <div class="px-5 py-2">
+            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Instructors</a>
+          </div>
+          <div class="px-5 py-2">
+            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Pricing</a>
+          </div>
+          <div class="px-5 py-2">
+            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Blog</a>
+          </div>
+          <div class="px-5 py-2">
+            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Contact</a>
+          </div>
+          <div class="px-5 py-2">
+            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Privacy</a>
+          </div>
+          <div class="px-5 py-2">
+            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Terms</a>
+          </div>
+        </nav>
+        <div class="mt-8 flex justify-center space-x-6">
+          <a href="#" class="text-gray-400 hover:text-gray-500">
+            <i data-feather="facebook" class="h-6 w-6"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500">
+            <i data-feather="instagram" class="h-6 w-6"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500">
+            <i data-feather="twitter" class="h-6 w-6"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500">
+            <i data-feather="github" class="h-6 w-6"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-500">
+            <i data-feather="linkedin" class="h-6 w-6"></i>
+          </a>
+        </div>
+        <!-- Payments -->
+        <div class="mt-8 flex justify-center">
+          <img src="Pay-With-logo.webp" alt="Workcation" class="" />
+        </div>
+        <p class="mt-8 text-center text-base text-gray-400">&copy; 2023 EduSphere, Inc. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Initialize Feather Icons
+        feather.replace()
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button')
+        const mobileMenu = document.getElementById('mobile-menu')
+
+        mobileMenuButton.addEventListener('click', function () {
+          const isExpanded = mobileMenu.classList.toggle('hidden')
+
+          // Change icon based on menu state
+          const icon = mobileMenuButton.querySelector('i')
+          if (isExpanded) {
+            icon.setAttribute('data-feather', 'menu')
+          } else {
+            icon.setAttribute('data-feather', 'x')
+          }
+          feather.replace()
+        })
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden')
+            mobileMenuButton.querySelector('i').setAttribute('data-feather', 'menu')
+            feather.replace()
+          })
+        })
+      })
+    </script>
+  </body>
+</html>
